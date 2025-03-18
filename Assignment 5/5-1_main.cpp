@@ -1,31 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "ds_q5.h"
+#include <iostream>
+#include "ds_q5.hpp"
 
 int main() {
-	DamageList_s *head = NULL, *tail = NULL;
+	DamageList_s *head = nullptr, *tail = nullptr;
 	int m, n, L;
-	int *damage;
 
-	scanf("%d %d %d", &m, &n, &L);
+	std::cin >> m >> n >> L;
 
 	for (int i = 0; i < L; i++) {
 		int dmg;
 		scanf("%d", &dmg);
-		if (head == NULL) {
-			head = (DamageList_s *)malloc(sizeof(DamageList_s));
+		if (head == nullptr) {
+			head = new DamageList_s;
 			head->damage = dmg;
-			head->next = NULL;
+			head->next = nullptr;
 			tail = head;
 		} else {
-			tail->next = (DamageList_s *)malloc(sizeof(DamageList_s));
+			tail->next = new DamageList_s;
 			tail = tail->next;
 			tail->damage = dmg;
-			tail->next = NULL;
+			tail->next = nullptr;
 		}
 	}
 
-	damage = visualizeDamage(head, m, n);
+	std::vector<std::vector<int>> damage = visualizeDamage(head, m, n);
 
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -36,9 +34,8 @@ int main() {
 	for (int i = 0; i < L; i++) {
 		DamageList_s *tmp = head;
 		head = head->next;
-		free(tmp);
+		delete tmp;
 	}
-	free(damage);
 
 	return 0;
 }
