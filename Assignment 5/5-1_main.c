@@ -3,7 +3,7 @@
 #include "ds_q5.h"
 
 int main() {
-	DamageNode_s *head = NULL, *tail = NULL;
+	DamageNode_t *head = NULL, *tail = NULL;
 	int m, n, L;
 	int *damage;
 
@@ -13,12 +13,12 @@ int main() {
 		int dmg;
 		scanf("%d", &dmg);
 		if (head == NULL) {
-			head = (DamageNode_s *)malloc(sizeof(DamageNode_s));
+			head = (DamageNode_t *)malloc(sizeof(DamageNode_t));
 			head->damage = dmg;
 			head->next = NULL;
 			tail = head;
 		} else {
-			tail->next = (DamageNode_s *)malloc(sizeof(DamageNode_s));
+			tail->next = (DamageNode_t *)malloc(sizeof(DamageNode_t));
 			tail = tail->next;
 			tail->damage = dmg;
 			tail->next = NULL;
@@ -34,7 +34,7 @@ int main() {
 		printf("\n");
 	}
 	for (int i = 0; i < L; i++) {
-		DamageNode_s *tmp = head;
+		DamageNode_t *tmp = head;
 		head = head->next;
 		free(tmp);
 	}

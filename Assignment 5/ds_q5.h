@@ -6,10 +6,10 @@
 typedef struct DamageNode {
 	int damage;
 	struct DamageNode *next;
-} DamageNode_s;
+} DamageNode_t;
 
-int* mapDamage(DamageNode_s *head, int m, int n);
+int* mapDamage(DamageNode_t *head, int m, int n);
 
-int* mapRotatingDamage(DamageNode_s *head, int m, int n, int k);
+int* mapRotatingDamage(DamageNode_t *head, int m, int n, int k);
 
 #endif
