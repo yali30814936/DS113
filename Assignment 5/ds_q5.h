@@ -3,13 +3,13 @@
 #ifndef DS_Q5_H
 #define DS_Q5_H
 
-typedef struct DamageList {
+typedef struct DamageNode {
 	int damage;
-	struct DamageList *next;
-} DamageList_s;
+	struct DamageNode *next;
+} DamageNode_s;
 
-int* visualizeDamage(DamageList_s *head, int m, int n);
+int* mapDamage(DamageNode_s *head, int m, int n);
 
-int* visualizeDamage2(DamageList_s *head, int m, int n, int k);
+int* mapRotatingDamage(DamageNode_s *head, int m, int n, int k);
 
 #endif

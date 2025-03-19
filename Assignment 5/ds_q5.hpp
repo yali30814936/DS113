@@ -5,13 +5,13 @@
 
 #include <vector>
 
-typedef struct DamageList {
+typedef struct DamageNode {
 	int damage;
-	struct DamageList *next;
-} DamageList_s;
+	struct DamageNode *next;
+} DamageNode_s;
 
-std::vector<std::vector<int>> visualizeDamage(DamageList_s *head, int m, int n);
+std::vector<std::vector<int>> mapDamage(DamageNode_s *head, int m, int n);
 
-std::vector<std::vector<int>> visualizeDamage2(DamageList_s *head, int m, int n, int k);
+std::vector<std::vector<int>> mapRotatingDamage(DamageNode_s *head, int m, int n, int k);
 
 #endif

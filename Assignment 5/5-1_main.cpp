@@ -7,7 +7,7 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	DamageList_s *head = nullptr, *tail = nullptr;
+	DamageNode_s *head = nullptr, *tail = nullptr;
 	int m, n, L;
 
 	cin >> m >> n >> L;
@@ -16,19 +16,19 @@ int main() {
 		int dmg;
 		cin >> dmg;
 		if (head == nullptr) {
-			head = new DamageList_s;
+			head = new DamageNode_s;
 			head->damage = dmg;
 			head->next = nullptr;
 			tail = head;
 		} else {
-			tail->next = new DamageList_s;
+			tail->next = new DamageNode_s;
 			tail = tail->next;
 			tail->damage = dmg;
 			tail->next = nullptr;
 		}
 	}
 
-	vector<vector<int>> damage = visualizeDamage(head, m, n);
+	vector<vector<int>> damage = mapDamage(head, m, n);
 
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
@@ -37,7 +37,7 @@ int main() {
 		cout << "\n";
 	}
 	for (int i = 0; i < L; i++) {
-		DamageList_s *tmp = head;
+		DamageNode_s *tmp = head;
 		head = head->next;
 		delete tmp;
 	}

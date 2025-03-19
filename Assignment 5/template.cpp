@@ -3,11 +3,11 @@
 
 using namespace std;
 
-vector<vector<int>> visualizeDamage(DamageList_s *head, int m, int n) {
+vector<vector<int>> mapDamage(DamageNode_s *head, int m, int n) {
 	// Implement this function for assignment 5-1
 }
 
-vector<vector<int>> visualizeDamage2(DamageList_s *head, int m, int n, int k) {
+vector<vector<int>> mapRotatingDamage(DamageNode_s *head, int m, int n, int k) {
 	// Implement this function for assignment 5-2
 }
 
