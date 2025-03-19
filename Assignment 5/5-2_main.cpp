@@ -7,25 +7,25 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	DamageNode_s *head = nullptr, *tail = nullptr;
-	DamageNode_s **arr;
+	DamageNode_t *head = nullptr, *tail = nullptr;
+	DamageNode_t **arr;
 	int m, n, L, k;
 
 	cin >> m >> n >> L;
 
-	arr = new DamageNode_s*[L];
+	arr = new DamageNode_t*[L];
 
 	for (int i = 0; i < L; i++) {
 		int dmg;
 		cin >> dmg;
 		if (head == nullptr) {
-			head = new DamageNode_s;
+			head = new DamageNode_t;
 			arr[i] = head;
 			head->damage = dmg;
 			head->next = nullptr;
 			tail = head;
 		} else {
-			tail->next = new DamageNode_s;
+			tail->next = new DamageNode_t;
 			arr[i] = tail->next;
 			tail = tail->next;
 			tail->damage = dmg;
@@ -43,7 +43,7 @@ int main() {
 		cout << "\n";
 	}
 	for (int i = 0; i < L; i++) {
-		DamageNode_s *tmp = arr[i];
+		DamageNode_t *tmp = arr[i];
 		delete tmp;
 	}
 	delete[] arr;

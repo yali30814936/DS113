@@ -8,10 +8,10 @@
 typedef struct DamageNode {
 	int damage;
 	struct DamageNode *next;
-} DamageNode_s;
+} DamageNode_t;
 
-std::vector<std::vector<int>> mapDamage(DamageNode_s *head, int m, int n);
+std::vector<std::vector<int>> mapDamage(DamageNode_t *head, int m, int n);
 
-std::vector<std::vector<int>> mapRotatingDamage(DamageNode_s *head, int m, int n, int k);
+std::vector<std::vector<int>> mapRotatingDamage(DamageNode_t *head, int m, int n, int k);
 
 #endif

@@ -7,7 +7,7 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 
-	DamageNode_s *head = nullptr, *tail = nullptr;
+	DamageNode_t *head = nullptr, *tail = nullptr;
 	int m, n, L;
 
 	cin >> m >> n >> L;
@@ -16,12 +16,12 @@ int main() {
 		int dmg;
 		cin >> dmg;
 		if (head == nullptr) {
-			head = new DamageNode_s;
+			head = new DamageNode_t;
 			head->damage = dmg;
 			head->next = nullptr;
 			tail = head;
 		} else {
-			tail->next = new DamageNode_s;
+			tail->next = new DamageNode_t;
 			tail = tail->next;
 			tail->damage = dmg;
 			tail->next = nullptr;
@@ -37,7 +37,7 @@ int main() {
 		cout << "\n";
 	}
 	for (int i = 0; i < L; i++) {
-		DamageNode_s *tmp = head;
+		DamageNode_t *tmp = head;
 		head = head->next;
 		delete tmp;
 	}
