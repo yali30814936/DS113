@@ -1,5 +1,5 @@
 #define main student_main
-#include "midterm.c"
+#include "student_submission.c"
 #undef main
 
 void ta_append(int element) {
